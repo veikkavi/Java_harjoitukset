@@ -8,7 +8,7 @@ public class Subscription{
     private double kuukausihinta;
     
     public Subscription(){
-        this.lehden_nimi = "dasda";
+        this.lehden_nimi = "";
         this.tilaajan_nimi = "";
         this.toimitusosoite = "";
         this.kuukausihinta = 0;
