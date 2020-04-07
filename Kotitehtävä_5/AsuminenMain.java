@@ -14,11 +14,8 @@ public class AsuminenMain{
         tontti.setNimi(sc.nextLine());
         System.out.println("");
         
-        System.out.println("Sijainti: ");
-        System.out.print("Leveyspiiri: ");
-        tontti.setSijaintiLeveys(sc.nextLine()); 
-        System.out.print("Pituuspiiri: ");
-        tontti.setSijaintiPituus(sc.nextLine());
+        System.out.println("Osoite: ");
+        tontti.setOsoite(sc.nextLine()); 
         System.out.println("");
         
         System.out.print("Pinta-ala neliömetreinä: ");

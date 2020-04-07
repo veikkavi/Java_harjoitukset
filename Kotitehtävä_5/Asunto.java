@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Rakennus{
+public class Asunto extends Rakennus{
     
     
     private double pintaAla;
@@ -8,7 +8,7 @@ public class Rakennus{
     private Asukkaat asukkaat;
     
     
-    public Rakennus(){
+    public Asunto(){
         this.pintaAla = 0;
         this.huoneidenLkm = 0;
         this.asukkaat = new Asukkaat();
