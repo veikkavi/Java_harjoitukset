@@ -7,7 +7,6 @@ public class Tontti{
     private String osoite;
     private double pintaAla;
     private Rakennus talo;
-    private String rakennusTyyppi;
     
     
     public Tontti(){
@@ -15,7 +14,6 @@ public class Tontti{
         this.osoite = "";
         this.pintaAla = 0;
         this.talo = new Rakennus();
-        this.rakennusTyyppi = "";
     }
     
     
@@ -36,6 +34,11 @@ public class Tontti{
             this.pintaAla = pintaAla;
             return "";
     }
+	
+	
+	public String setRakennusTyyppi(String tyyppi){   
+        return talo.setRakennusTyyppi(tyyppi);
+    }  
     
     
     public String getNimi(){
@@ -52,6 +55,11 @@ public class Tontti{
         return this.pintaAla;
     }
  
+	
+	public String getRakennusTyyppi(){
+        return talo.getRakennusTyyppi();
+    }
+	
  
     public String setTalonPintaAla(double pintaAla){
         return talo.setPintaAla(pintaAla);
@@ -63,33 +71,25 @@ public class Tontti{
     }
  
  
-    public void setAsukas(String nimi, String syntymaAika){
-        String[] asukas = {nimi, syntymaAika};
-        talo.setAsukas(asukas);
+    public void setAsukas(String nimi){
+        talo.setAsukas(nimi);
     }
   
+	
+	public void newAsunto(){
+		talo.newAsunto();
+	}
   
-    public double getTalonPintaAla(){        
-        return talo.getPintaAla();
-    }
- 
- 
-    public int getHuoneidenLkm(){
-        return talo.getHuoneidenLkm();
-    }
-  
-  
-    public ArrayList<String[]> getAsukkaat(){
-        return talo.getAsukkaat();
-    }
+	
+	public void addAsunto(){
+		talo.addAsunto();
+	}
  
  
     public void tulostaTontti(){
         System.out.println("Tontin Tiedot:");
         System.out.println("Tontin nimi: " + nimi);
-        System.out.println("Sijainti: ");
-        System.out.println("Leveys: " + osoite);
-        System.out.println("Pituus: " + sijaintiPituus);
+        System.out.println("Osoite: " + osoite);
         System.out.println("Pinta-ala: " + pintaAla);
         System.out.println("");
         talo.tulostaRakennus();

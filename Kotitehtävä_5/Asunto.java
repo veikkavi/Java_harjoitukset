@@ -1,19 +1,25 @@
 import java.util.ArrayList;
 
-public class Asunto extends Rakennus{
+public class Asunto{
     
     
     private double pintaAla;
     private int huoneidenLkm;
-    private Asukkaat asukkaat;
+	private Asukas asukas;
+    private ArrayList<Asukas> asukkaat;
     
     
     public Asunto(){
         this.pintaAla = 0;
         this.huoneidenLkm = 0;
-        this.asukkaat = new Asukkaat();
+        this.asukkaat = new ArrayList<Asukas>();
     }
     
+	
+	public void newAsukas(){
+		this.asukas = new Asukas();
+	}
+	
     
     public String setPintaAla(double pintaAla){
         if(pintaAla < 0)
@@ -31,8 +37,10 @@ public class Asunto extends Rakennus{
             return "";
     }
     
-    public void setAsukas(String[] asukas){       
-        asukkaat.setAsukas(asukas);
+    public void setAsukas(String nimi){ 
+		newAsukas();
+		asukas.setNimi(nimi);
+        asukkaat.add(asukas);
     }   
         
     public double getPintaAla(){
@@ -43,16 +51,21 @@ public class Asunto extends Rakennus{
         return this.huoneidenLkm;
     }
     
-    public ArrayList<String[]> getAsukkaat(){
-        return asukkaat.getAsukkaat();
+    public ArrayList<Asukas> getAsukkaat(){
+        return this.asukkaat;
     }
        
-    public void tulostaRakennus(){
-        System.out.println("Rakennuksen Tiedot:");
+    public void tulostaAsunto(){
+        System.out.println("Asunnon Tiedot:");
         System.out.println("Pinta-ala: " + pintaAla);
         System.out.println("Huoneiden lukumäärä: " + huoneidenLkm);
         System.out.println("");
-        asukkaat.tulostaAsukkaat();
+		System.out.println("Asukkaat:");
+		for(Asukas asukas : asukkaat){
+			asukas.tulostaAsukas();
+		}
+		System.out.println("");		
     }
+
 
 }
